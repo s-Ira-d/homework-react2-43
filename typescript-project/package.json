@@ -1,17 +1,23 @@
 {
   "name": "typescript-project",
+  "homepage": "https://s-Ira-d.github.io/homework-react2-43",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && copyfiles -u 1 dist/**/*.js dist/**/*.map public",
     "watch": "tsc --watch",
-    "check": "tsc --noEmit"
+    "check": "tsc --noEmit",
+    "dev": "live-server public",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d public"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "gh-pages": "^6.3.0",
     "typescript": "^7.0.2"
   }
 }
